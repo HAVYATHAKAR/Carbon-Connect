@@ -4,10 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const siteConfiguration = {
-  title: "Carbon-Connect",
-  language: "en"
-}
+import siteConfiguration from './.figma/make/site.json' with { type: 'json' }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
