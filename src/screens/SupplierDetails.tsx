@@ -60,6 +60,7 @@ export default function SupplierDetails() {
               </div>
               <Table
                 headers={['Listing', 'Grade', 'Purity', 'Volume', 'Ex-works', 'State', 'Action']}
+                rows={[
                   ['CC-L-4821', 'Food Grade CO₂', '99.92%', '1,200 t/yr', '₹12,400/t', 'Liquid (-20°C)', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
                   ['CC-L-4820', 'Industrial Grade CO₂', '99.51%', '8,400 t/yr', '₹7,500/t', 'Liquid (-20°C)', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
                   ['CC-L-4815', 'Captured CO₂', '98.10%', '24,000 t/yr', '₹5,600/t', 'Gas / Liquid', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],

@@ -169,7 +169,7 @@ export default function Marketplace() {
             <input type="number" defaultValue="95" className="w-full px-2 py-1.5 text-xs border border-zinc-300 rounded bg-white focus:outline-none focus:border-[#15572A] transition-colors" />
           </div>
           <div>
-            <label className="text-xs text-zinc-500 mb-1.5 block">Max. Price ($/t)</label>
+            <label className="text-xs text-zinc-500 mb-1.5 block">Max. Price (₹/t)</label>
             <input type="number" defaultValue="120" className="w-full px-2 py-1.5 text-xs border border-zinc-300 rounded bg-white focus:outline-none focus:border-[#15572A] transition-colors" />
           </div>
         </div>
