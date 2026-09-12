@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 const steps = ['CO₂ Specs', 'Certifications', 'Pricing', 'Logistics', 'Review'];
 
 const initialCerts = [
-  { name: 'EN 13279 / EIGA Doc 70 Quality Standard', uploaded: true },
+  { name: 'BIS IS:15222 Quality Standard', uploaded: true },
   { name: 'ISO 9001:2015 Quality Management Certificate', uploaded: true },
   { name: 'ISCC PLUS Sustainability Certificate', uploaded: true },
   { name: 'Third-party gas analysis report (< 90 days)', uploaded: false },
@@ -67,7 +67,7 @@ export default function CreateListing() {
                   </div>
                   <div className="px-8 py-2">
                     <FormRow label="Product name / grade">
-                      <Input value="Industrial Grade CO₂ — Heidelberg Plant" />
+                      <Input value="Industrial Grade CO₂ — Mumbai Plant" />
                     </FormRow>
                     <FormRow label="CO₂ purity (% vol)" hint="Minimum guaranteed purity">
                       <div className="flex gap-2 items-center">
@@ -131,7 +131,7 @@ export default function CreateListing() {
                       </div>
                     </FormRow>
                     <FormRow label="Source location">
-                      <Input value="Heidelberg Cement Plant, Baden-Württemberg, Germany (49.4°N 8.7°E)" />
+                      <Input value="UltraTech Cement Plant, Mumbai, Maharashtra, India (19.0°N 72.8°E)" />
                     </FormRow>
                   </div>
                 </div>
@@ -165,38 +165,38 @@ export default function CreateListing() {
                   <div className="px-8 py-2">
                     <FormRow label="Base price (ex-works)" hint="CO₂ production cost + margin">
                       <div className="flex gap-2 items-center">
-                        <Input value="62.00" className="w-28" />
-                        <span className="text-sm text-zinc-500">USD / tonne</span>
+                        <Input value="5,200.00" className="w-28" />
+                        <span className="text-sm text-zinc-500">INR / tonne</span>
                       </div>
                     </FormRow>
                     <FormRow label="Liquefaction cost" hint="If applicable">
                       <div className="flex gap-2 items-center">
-                        <Input value="12.50" className="w-28" />
-                        <span className="text-sm text-zinc-500">USD / tonne</span>
+                        <Input value="1,050.00" className="w-28" />
+                        <span className="text-sm text-zinc-500">INR / tonne</span>
                       </div>
                     </FormRow>
                     <FormRow label="Storage cost" hint="Tank / depot fee">
                       <div className="flex gap-2 items-center">
-                        <Input value="4.00" className="w-28" />
-                        <span className="text-sm text-zinc-500">USD / tonne</span>
+                        <Input value="350.00" className="w-28" />
+                        <span className="text-sm text-zinc-500">INR / tonne</span>
                       </div>
                     </FormRow>
                     <FormRow label="Handling / loading" hint="Plant gate operations">
                       <div className="flex gap-2 items-center">
-                        <Input value="3.50" className="w-28" />
-                        <span className="text-sm text-zinc-500">USD / tonne</span>
+                        <Input value="300.00" className="w-28" />
+                        <span className="text-sm text-zinc-500">INR / tonne</span>
                       </div>
                     </FormRow>
                     <FormRow label="Platform fee" hint="Carbon-Connect fee (auto-calculated)">
                       <div className="flex gap-2 items-center">
-                        <Input value="1.70" className="w-28" />
-                        <span className="text-sm text-zinc-400">USD / tonne (read-only)</span>
+                        <Input value="150.00" className="w-28" />
+                        <span className="text-sm text-zinc-400">INR / tonne (read-only)</span>
                       </div>
                     </FormRow>
                     <div className="py-4 border-t border-zinc-200 mt-2">
                       <div className="flex items-center justify-between text-sm font-semibold text-zinc-900">
                         <span>Ex-works total (excl. logistics)</span>
-                        <span className="font-mono">$83.70 / tonne</span>
+                        <span className="font-mono">₹7,050.00 / tonne</span>
                       </div>
                       <p className="text-xs text-zinc-400 mt-1">Logistics costs are calculated separately by route and mode.</p>
                     </div>
@@ -248,7 +248,7 @@ export default function CreateListing() {
                       </div>
                     </FormRow>
                     <FormRow label="Logistics partner">
-                      <Select options={['Self-managed', 'Messer Transport GmbH', 'Linde Gas Logistics', 'Air Liquide Transport', 'Third-party (buyer arranges)']} value="Messer Transport GmbH" />
+                      <Select options={['Self-managed', 'Adani Logistics', 'V-Trans India', 'Third-party (buyer arranges)']} value="Adani Logistics" />
                     </FormRow>
                   </div>
                 </div>
@@ -265,10 +265,10 @@ export default function CreateListing() {
                       { label: 'Physical state', v: 'Liquid (cryogenic, -20°C, 18.5 bar)' },
                       { label: 'Volume', v: '85,000 t/year — from 2026-10-01' },
                       { label: 'Source', v: 'Cement kiln flue gas capture' },
-                      { label: 'Location', v: 'Heidelberg, Baden-Württemberg, Germany' },
-                      { label: 'Ex-works price', v: '$83.70 / tonne' },
+                      { label: 'Location', v: 'Mumbai, Maharashtra, India' },
+                      { label: 'Ex-works price', v: '₹7,050.00 / tonne' },
                       { label: 'Delivery terms', v: 'DAP — road tanker or ISO container' },
-                      { label: 'Certifications', v: 'ISO 9001, ISCC PLUS, EIGA Doc 70' },
+                      { label: 'Certifications', v: 'ISO 9001, ISCC PLUS, BIS IS:15222' },
                     ].map((row, i) => (
                       <div key={i} className="flex items-center justify-between py-2 border-b border-zinc-100 last:border-0 text-sm">
                         <span className="text-zinc-500">{row.label}</span>
@@ -321,10 +321,10 @@ export default function CreateListing() {
             <Card className="p-5">
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-3">Pricing Guidance</div>
               <div className="space-y-1.5 text-xs text-zinc-600">
-                <div className="flex justify-between"><span>Food grade</span><span className="font-mono">$130–180/t</span></div>
-                <div className="flex justify-between"><span>Industrial grade</span><span className="font-mono">$75–110/t</span></div>
-                <div className="flex justify-between"><span>Technical grade</span><span className="font-mono">$45–70/t</span></div>
-                <div className="flex justify-between"><span>Captured CO₂</span><span className="font-mono">$50–85/t</span></div>
+                <div className="flex justify-between"><span>Food grade</span><span className="font-mono">₹11,000–15,000/t</span></div>
+                <div className="flex justify-between"><span>Industrial grade</span><span className="font-mono">₹6,000–9,000/t</span></div>
+                <div className="flex justify-between"><span>Technical grade</span><span className="font-mono">₹4,000–6,000/t</span></div>
+                <div className="flex justify-between"><span>Captured CO₂</span><span className="font-mono">₹4,200–7,000/t</span></div>
               </div>
               <div className="mt-3 text-xs text-zinc-400">Market prices as of Sep 2026. Logistics excluded.</div>
             </Card>

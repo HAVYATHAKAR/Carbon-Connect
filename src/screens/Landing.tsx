@@ -72,10 +72,9 @@ export default function Landing() {
             </span>
           </div>
           <nav className="flex items-center gap-6 text-sm text-zinc-500">
-            <a href="#" className="hover:text-zinc-900 transition-colors">Platform</a>
-            <a href="#" className="hover:text-zinc-900 transition-colors">Industries</a>
-            <a href="#" className="hover:text-zinc-900 transition-colors">Compliance</a>
-            <a href="#" className="hover:text-zinc-900 transition-colors">Pricing</a>
+            <a href="#sellers" className="hover:text-zinc-900 transition-colors">Industries that capture and store CO₂</a>
+            <a href="#buyers" className="hover:text-zinc-900 transition-colors">Industries that need CO₂</a>
+            <a href="#about" className="hover:text-zinc-900 transition-colors">About</a>
           </nav>
           <div className="flex items-center gap-2">
             <Btn variant="ghost" onClick={() => navigate('login')}>Sign in</Btn>
@@ -88,10 +87,7 @@ export default function Landing() {
       <section className="max-w-screen-xl mx-auto px-6 pt-20 pb-16">
         <div className="grid grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 border border-green-200 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse-green" />
-              <span className="text-xs text-green-800 font-medium">Now live in 28 countries</span>
-            </div>
+
             <h1 className="text-5xl font-semibold tracking-tight text-zinc-900 leading-[1.1] mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
               Industrial CO₂<br />
               <span className="text-[#15572A]">procurement,</span><br />
@@ -104,7 +100,7 @@ export default function Landing() {
               <Btn onClick={() => navigate('role-selection')} className="px-6">
                 Start trading CO₂
               </Btn>
-              <Btn variant="outline" onClick={() => navigate('marketplace')}>
+              <Btn variant="outline" onClick={() => navigate('login')}>
                 Browse marketplace →
               </Btn>
             </div>
@@ -118,10 +114,10 @@ export default function Landing() {
               </div>
               <div className="space-y-3">
                 {[
-                  { grade: 'Food Grade CO₂ (99.9%)', price: '$148/t', change: '+2.1%', vol: '12,400 t' },
-                  { grade: 'Industrial Grade (99.5%)', price: '$89/t', change: '-0.8%', vol: '48,200 t' },
-                  { grade: 'Technical Grade (98.0%)', price: '$54/t', change: '+0.3%', vol: '91,500 t' },
-                  { grade: 'Captured / Utilization', price: '$67/t', change: '+4.2%', vol: '23,800 t' },
+                  { grade: 'Food Grade CO₂ (99.9%)', price: '₹12,400/t', change: '+2.1%', vol: '12,400 t' },
+                  { grade: 'Industrial Grade (99.5%)', price: '₹7,500/t', change: '-0.8%', vol: '48,200 t' },
+                  { grade: 'Technical Grade (98.0%)', price: '₹4,500/t', change: '+0.3%', vol: '91,500 t' },
+                  { grade: 'Captured / Utilization', price: '₹5,600/t', change: '+4.2%', vol: '23,800 t' },
                 ].map((row, i) => (
                   <div key={i} className="flex items-center justify-between py-2 border-b border-zinc-100 last:border-0">
                     <div>
@@ -136,28 +132,15 @@ export default function Landing() {
                 ))}
               </div>
               <button
-                onClick={() => navigate('marketplace')}
+                onClick={() => navigate('login')}
                 className="mt-4 w-full py-2 text-xs font-medium text-[#15572A] border border-[#15572A]/30 rounded hover:bg-green-50 transition-colors"
               >
                 View full marketplace →
               </button>
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-[#15572A] text-white p-4 rounded-lg shadow-lg">
-              <div className="text-2xl font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>4.2M</div>
-              <div className="text-xs opacity-80">tonnes CO₂ traded</div>
-            </div>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-4 gap-6 mt-16 pt-16 border-t border-zinc-200">
-          {stats.map((s, i) => (
-            <div key={i}>
-              <div className="text-3xl font-semibold text-zinc-900" style={{ fontFamily: 'var(--font-heading)' }}>{s.v}</div>
-              <div className="text-sm text-zinc-500 mt-1">{s.l}</div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* Industries */}
@@ -207,11 +190,37 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="border-t border-zinc-200 bg-white py-16">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <h2 className="text-2xl font-semibold text-zinc-900 mb-6" style={{ fontFamily: 'var(--font-heading)' }}>About Carbon-Connect</h2>
+          <div className="grid grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-medium text-zinc-900 mb-2">Our Platform</h3>
+              <p className="text-sm text-zinc-500 leading-relaxed">
+                We are building India's premier B2B marketplace for physical CO₂. Our platform connects large industrial emitters with utilization industries, ensuring transparent pricing and fully digitized MRV reporting to support national net-zero goals.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-zinc-900 mb-2">Terms & Conditions</h3>
+              <p className="text-sm text-zinc-500 leading-relaxed">
+                All trades are subject to physical delivery verification and Indian regulatory compliance (BIS standards). By using the platform, users agree to binding arbitration for any dispute regarding purity or logistics.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-zinc-900 mb-2">Privacy</h3>
+              <p className="text-sm text-zinc-500 leading-relaxed">
+                Organizational data, trade volumes, and pricing are kept strictly confidential. Aggregate data may be used for market indices. We comply fully with the DPDP Act of India regarding organizational and personal data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#15572A] py-16">
         <div className="max-w-screen-xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-semibold text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>Ready to trade industrial CO₂?</h2>
-          <p className="text-green-200 mb-8 max-w-lg mx-auto">Join 340+ verified industrial organizations trading physical CO₂ on Carbon-Connect.</p>
           <div className="flex justify-center gap-3">
             <button
               onClick={() => { setRole('seller'); navigate('role-selection'); }}

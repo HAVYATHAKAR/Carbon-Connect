@@ -14,11 +14,11 @@ export default function SupplierDetails() {
           <div className="flex items-start justify-between">
             <div>
               <div className="flex items-center gap-3 mb-1">
-                <h1 className="text-2xl font-semibold text-zinc-900" style={{ fontFamily: 'var(--font-heading)' }}>Heidelberg Materials AG</h1>
+                <h1 className="text-2xl font-semibold text-zinc-900" style={{ fontFamily: 'var(--font-heading)' }}>UltraTech Cement Ltd</h1>
                 <Badge variant="green">VERIFIED SELLER</Badge>
-                <Badge variant="blue">EU ETS COMPLIANT</Badge>
+                <Badge variant="blue">CPCB COMPLIANT</Badge>
               </div>
-              <p className="text-zinc-500 text-sm">Cement Plant — Heidelberg, Baden-Württemberg, Germany · Member since Apr 2025</p>
+              <p className="text-zinc-500 text-sm">Cement Plant — Mumbai, Maharashtra, India · Member since Apr 2025</p>
             </div>
             <div className="flex gap-2">
               <Btn variant="outline" onClick={() => navigate('marketplace')}>← Back</Btn>
@@ -33,10 +33,10 @@ export default function SupplierDetails() {
             <Card className="p-6">
               <h3 className="text-sm font-semibold text-zinc-900 mb-3">About the Supplier</h3>
               <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-                Heidelberg Materials AG operates one of Europe's largest integrated cement plants at Heidelberg. The plant captures CO₂ from kiln flue gases through a post-combustion amine scrubbing process with a capture capacity of 85,000 tonnes per year. CO₂ is liquefied on-site, stored in insulated cryogenic tanks, and dispatched by road tanker across Central Europe.
+                UltraTech Cement Ltd operates one of India's largest integrated cement plants near Mumbai. The plant captures CO₂ from kiln flue gases through a post-combustion amine scrubbing process with a capture capacity of 85,000 tonnes per year. CO₂ is liquefied on-site, stored in insulated cryogenic tanks, and dispatched by road tanker across Maharashtra and Gujarat.
               </p>
               <p className="text-sm text-zinc-600 leading-relaxed">
-                The capture facility holds EU ETS installation permit DE-9-0001234 and operates under ISO 9001 and ISO 14001 management systems. ISCC PLUS certification covers the full chain of custody from capture to point of delivery.
+                The capture facility holds CPCB Consent to Operate and operates under ISO 9001 and ISO 14001 management systems. ISCC PLUS certification covers the full chain of custody from capture to point of delivery.
               </p>
               <div className="mt-4 grid grid-cols-4 gap-4 border-t border-zinc-100 pt-4">
                 {[
@@ -60,10 +60,9 @@ export default function SupplierDetails() {
               </div>
               <Table
                 headers={['Listing', 'Grade', 'Purity', 'Volume', 'Ex-works', 'State', 'Action']}
-                rows={[
-                  ['CC-L-4821', 'Food Grade CO₂', '99.92%', '1,200 t/yr', '$148/t', 'Liquid (-20°C)', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
-                  ['CC-L-4820', 'Industrial Grade CO₂', '99.51%', '8,400 t/yr', '$89/t', 'Liquid (-20°C)', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
-                  ['CC-L-4815', 'Captured CO₂', '98.10%', '24,000 t/yr', '$67/t', 'Gas / Liquid', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
+                  ['CC-L-4821', 'Food Grade CO₂', '99.92%', '1,200 t/yr', '₹12,400/t', 'Liquid (-20°C)', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
+                  ['CC-L-4820', 'Industrial Grade CO₂', '99.51%', '8,400 t/yr', '₹7,500/t', 'Liquid (-20°C)', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
+                  ['CC-L-4815', 'Captured CO₂', '98.10%', '24,000 t/yr', '₹5,600/t', 'Gas / Liquid', <Btn onClick={() => navigate('product-detail')} className="text-xs py-1 px-2">View →</Btn>],
                 ]}
               />
             </Card>
@@ -76,10 +75,10 @@ export default function SupplierDetails() {
               <Table
                 headers={['Order', 'Buyer', 'Volume', 'Grade', 'Delivered', 'Rating']}
                 rows={[
-                  ['CC-O-8920', 'Nordic Food Systems AS', '400 t', 'Food Grade', 'Aug 2026', '★★★★★'],
-                  ['CC-O-8891', 'CarbonCure Technologies', '2,200 t', 'Captured CO₂', 'Jul 2026', '★★★★☆'],
-                  ['CC-O-8847', 'Vertis Greenhouse BV', '1,800 t', 'Industrial Grade', 'Jul 2026', '★★★★★'],
-                  ['CC-O-8820', 'Carbon8 Systems Ltd', '800 t', 'Captured CO₂', 'Jun 2026', '★★★★☆'],
+                  ['CC-O-8920', 'Godrej Agrovet Ltd', '400 t', 'Food Grade', 'Aug 2026', '★★★★★'],
+                  ['CC-O-8891', 'Indian Concrete Solutions', '2,200 t', 'Captured CO₂', 'Jul 2026', '★★★★☆'],
+                  ['CC-O-8847', 'Reliance Retail (Agri)', '1,800 t', 'Industrial Grade', 'Jul 2026', '★★★★★'],
+                  ['CC-O-8820', 'L&T Construction', '800 t', 'Captured CO₂', 'Jun 2026', '★★★★☆'],
                 ]}
               />
             </Card>
@@ -110,8 +109,8 @@ export default function SupplierDetails() {
                   { name: 'ISO 9001:2015', status: 'Valid until Mar 2027' },
                   { name: 'ISO 14001:2015', status: 'Valid until Mar 2027' },
                   { name: 'ISCC PLUS', status: 'Valid until Nov 2026' },
-                  { name: 'EU ETS Permit', status: 'Active — DE-9-0001234' },
-                  { name: 'EIGA Doc 70', status: 'Food grade certified' },
+                  { name: 'CPCB CTO', status: 'Active — MH-9-0001234' },
+                  { name: 'FSSAI Approved', status: 'Food grade certified' },
                 ].map((c, i) => (
                   <div key={i} className="flex items-center justify-between py-1.5 border-b border-zinc-100 last:border-0">
                     <div className="text-xs font-medium text-zinc-900">{c.name}</div>

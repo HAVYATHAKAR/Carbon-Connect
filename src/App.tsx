@@ -17,14 +17,13 @@ import ProductDetail from './screens/ProductDetail';
 import PricingBreakdown from './screens/PricingBreakdown';
 import QuoteOrder from './screens/QuoteOrder';
 import Contract from './screens/Contract';
-import Payment from './screens/Payment';
 import Logistics from './screens/Logistics';
 import QualityVerification from './screens/QualityVerification';
 import DigitalPassport from './screens/DigitalPassport';
-import DisputeResolution from './screens/DisputeResolution';
 import ImpactMRV from './screens/ImpactMRV';
 import AdminDashboard from './screens/AdminDashboard';
 import AnomalyMonitoring from './screens/AnomalyMonitoring';
+import Profile from './screens/Profile';
 
 function renderScreen(screen: Screen) {
   switch (screen) {
@@ -43,14 +42,13 @@ function renderScreen(screen: Screen) {
     case 'pricing-breakdown': return <PricingBreakdown />;
     case 'quote-order': return <QuoteOrder />;
     case 'contract': return <Contract />;
-    case 'payment': return <Payment />;
     case 'logistics': return <Logistics />;
     case 'quality-verification': return <QualityVerification />;
     case 'digital-passport': return <DigitalPassport />;
-    case 'dispute-resolution': return <DisputeResolution />;
     case 'impact-mrv': return <ImpactMRV />;
     case 'admin-dashboard': return <AdminDashboard />;
     case 'anomaly-monitoring': return <AnomalyMonitoring />;
+    case 'profile': return <Profile />;
     default: return <Landing />;
   }
 }

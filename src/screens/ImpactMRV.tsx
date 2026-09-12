@@ -21,10 +21,10 @@ const applications = [
 ];
 
 const batches = [
-  { id: 'CC-DP-2026-09-0847', date: 'Sep 21, 2026', qty: '499.4 t', app: 'Concrete mineralization', status: 'verified', verifier: 'Bureau Veritas' },
-  { id: 'CC-DP-2026-08-0712', date: 'Aug 14, 2026', qty: '1,200 t', app: 'Concrete mineralization', status: 'verified', verifier: 'SGS Group' },
-  { id: 'CC-DP-2026-08-0698', date: 'Aug 05, 2026', qty: '800 t', app: 'Chemical synthesis', status: 'verified', verifier: 'Bureau Veritas' },
-  { id: 'CC-DP-2026-07-0612', date: 'Jul 19, 2026', qty: '1,400 t', app: 'Concrete mineralization', status: 'verified', verifier: 'DNV GL' },
+  { id: 'CC-DP-2026-09-0847', date: 'Sep 21, 2026', qty: '499.4 t', app: 'Concrete mineralization', status: 'verified', verifier: 'Bureau Veritas India' },
+  { id: 'CC-DP-2026-08-0712', date: 'Aug 14, 2026', qty: '1,200 t', app: 'Concrete mineralization', status: 'verified', verifier: 'SGS India' },
+  { id: 'CC-DP-2026-08-0698', date: 'Aug 05, 2026', qty: '800 t', app: 'Chemical synthesis', status: 'verified', verifier: 'Bureau Veritas India' },
+  { id: 'CC-DP-2026-07-0612', date: 'Jul 19, 2026', qty: '1,400 t', app: 'Concrete mineralization', status: 'verified', verifier: 'TUV India' },
   { id: 'CC-DP-2026-09-0861', date: 'Sep 25, 2026 (est)', qty: '600 t', app: 'Concrete mineralization', status: 'pending', verifier: 'Pending' },
 ];
 
@@ -37,10 +37,10 @@ export default function ImpactMRV() {
       <div className="max-w-screen-xl mx-auto px-6 py-8">
         <SectionHeader
           title="Impact & MRV Dashboard"
-          sub="Monitoring, Reporting and Verification · ISO 14064-2 aligned · CarbonCure Technologies Inc."
+          sub="Monitoring, Reporting and Verification · ISO 14064-2 aligned · Indian Concrete Solutions"
           action={
             <div className="flex gap-2">
-              <Btn variant="outline">Export MRV report</Btn>
+              <Btn variant="outline" onClick={() => alert('Exporting MRV Report to CSV...')}>Export MRV report</Btn>
               <Btn onClick={() => navigate('digital-passport')}>CO₂ Passports →</Btn>
             </div>
           }
@@ -178,7 +178,7 @@ export default function ImpactMRV() {
             <Card className="p-5">
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-3">Accredited Verifiers</div>
               <div className="space-y-2 text-xs text-zinc-600">
-                {['Bureau Veritas — ISO 14065 accredited', 'SGS Group — ISCC PLUS & ISO 14065', 'DNV GL — ISO 14064 & 14065'].map((v, i) => (
+                {['Bureau Veritas India — ISO 14065 accredited', 'SGS India — ISCC PLUS & ISO 14065', 'TUV India — ISO 14064 & 14065'].map((v, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span className="text-green-600">✓</span>{v}
                   </div>

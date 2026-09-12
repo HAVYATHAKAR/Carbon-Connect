@@ -14,7 +14,7 @@ const specs = [
   { label: 'Delivery terms', value: 'DAP (Delivered at Place) — Incoterms 2020' },
   { label: 'Lead time', value: '5 business days from order confirmation' },
   { label: 'Available from', value: 'October 1, 2026' },
-  { label: 'Max delivery radius', value: '800 km from Heidelberg' },
+  { label: 'Max delivery radius', value: '800 km from Mumbai' },
 ];
 
 const contaminants = [
@@ -51,16 +51,16 @@ export default function ProductDetail() {
                     <Badge variant="green">VERIFIED</Badge>
                     <Badge variant="blue">ISO 9001</Badge>
                     <Badge variant="outline">ISCC PLUS</Badge>
-                    <Badge variant="outline">EU ETS</Badge>
+                    <Badge variant="outline">CPCB CTO</Badge>
                   </div>
                   <div className="text-sm text-zinc-500">
-                    Listing ID: <span className="font-mono">CC-L-4820</span> · Heidelberg Materials AG · Heidelberg, Germany
+                    Listing ID: <span className="font-mono">CC-L-4820</span> · UltraTech Cement Ltd · Mumbai, India
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-semibold text-zinc-900 font-mono">$89</div>
+                  <div className="text-3xl font-semibold text-zinc-900 font-mono">₹7,500</div>
                   <div className="text-xs text-zinc-400">per tonne ex-works</div>
-                  <div className="text-xs text-zinc-500 mt-1">Est. delivered: <span className="font-mono font-medium">$112/t</span></div>
+                  <div className="text-xs text-zinc-500 mt-1">Est. delivered: <span className="font-mono font-medium">₹9,400/t</span></div>
                 </div>
               </div>
               <div className="flex gap-2 pt-4 border-t border-zinc-100">
@@ -113,12 +113,12 @@ export default function ProductDetail() {
               <h3 className="text-sm font-semibold text-zinc-900 mb-4">Certifications &amp; Documentation</h3>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { name: 'ISO 9001:2015 Certificate', issuer: 'TÜV SÜD', date: '2027-03-15' },
-                  { name: 'ISO 14001:2015 Certificate', issuer: 'Bureau Veritas', date: '2027-03-15' },
+                  { name: 'ISO 9001:2015 Certificate', issuer: 'TÜV SÜD India', date: '2027-03-15' },
+                  { name: 'ISO 14001:2015 Certificate', issuer: 'Bureau Veritas India', date: '2027-03-15' },
                   { name: 'ISCC PLUS Chain of Custody', issuer: 'ISCC System GmbH', date: '2026-11-30' },
-                  { name: 'EU ETS Installation Permit', issuer: 'German Federal Authority', date: '2027-01-01' },
-                  { name: 'EIGA Doc 70 Compliance', issuer: 'EIGA', date: '2027-06-01' },
-                  { name: 'Gas Analysis Report', issuer: 'Bureau Veritas', date: 'Sep 2026' },
+                  { name: 'CPCB Consent to Operate', issuer: 'Maharashtra Pollution Control Board', date: '2027-01-01' },
+                  { name: 'BIS IS:15222 Compliance', issuer: 'Bureau of Indian Standards', date: '2027-06-01' },
+                  { name: 'Gas Analysis Report', issuer: 'Bureau Veritas India', date: 'Sep 2026' },
                 ].map((cert, i) => (
                   <div
                     key={i}
@@ -167,16 +167,16 @@ export default function ProductDetail() {
               </div>
               <div className="border-t border-green-700 pt-3 mb-4">
                 <div className="flex justify-between text-sm text-green-200 mb-1">
-                  <span>500 t × $89/t ex-works</span>
-                  <span className="font-mono">$44,500</span>
+                  <span>500 t × ₹7,500/t ex-works</span>
+                  <span className="font-mono">₹37.5L</span>
                 </div>
                 <div className="flex justify-between text-xs text-green-300 mb-1">
                   <span>Est. logistics (road, 600 km)</span>
-                  <span className="font-mono">$11,500</span>
+                  <span className="font-mono">₹4.5L</span>
                 </div>
                 <div className="flex justify-between text-sm font-semibold text-white border-t border-green-700 pt-2 mt-2">
                   <span>Estimated total</span>
-                  <span className="font-mono">$56,000</span>
+                  <span className="font-mono">₹42.0L</span>
                 </div>
               </div>
               <button

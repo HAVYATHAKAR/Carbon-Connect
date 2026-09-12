@@ -3,26 +3,18 @@ import { Card, Badge, Btn, SectionHeader } from '../components/ui';
 import Nav from '../components/Nav';
 
 const events = [
-  { time: 'Sep 12, 09:14', event: 'Order confirmed by seller', location: 'Heidelberg, Germany', status: 'done' },
+  { time: 'Sep 12, 09:14', event: 'Order confirmed by seller', location: 'Gujarat, India', status: 'done' },
   { time: 'Sep 12, 11:30', event: 'Payment escrow confirmed', location: 'Platform', status: 'done' },
-  { time: 'Sep 13, 07:00', event: 'CO₂ loaded into tanker TK-4921', location: 'Heidelberg Plant, Germany', status: 'done' },
-  { time: 'Sep 13, 08:15', event: 'Purity analysis completed — 99.63% CO₂', location: 'Bureau Veritas lab, Heidelberg', status: 'done' },
-  { time: 'Sep 13, 09:00', event: 'Dispatch — truck departed plant gate', location: 'Heidelberg, Germany', status: 'done' },
-  { time: 'Sep 13, 14:30', event: 'Border crossing — DE/FR (Kehl)', location: 'Kehl, Germany', status: 'done' },
-  { time: 'Sep 14, 06:00', event: 'Antwerp port — tank loaded onto vessel', location: 'Port of Antwerp, Belgium', status: 'active' },
-  { time: 'Sep 14, 18:00 (est)', event: 'Vessel departure — Halifax', location: 'Atlantic — ETA Sep 21', status: 'pending' },
-  { time: 'Sep 21, 14:00 (est)', event: 'Arrival Halifax port', location: 'Halifax, NS, Canada', status: 'pending' },
-  { time: 'Sep 21, 18:00 (est)', event: 'Final delivery — CarbonCure plant', location: '1465 Hammonds Plains Rd, Halifax', status: 'pending' },
-  { time: 'Sep 22 (est)', event: 'Quality acceptance & CO₂ Passport issued', location: 'CarbonCure Plant', status: 'pending' },
+  { time: 'Sep 13, 07:00', event: 'CO₂ loaded into tanker TK-4921', location: 'Reliance Plant, Jamnagar', status: 'done' },
+  { time: 'Sep 13, 08:15', event: 'Purity analysis completed — 99.63% CO₂', location: 'Bureau Veritas lab, Jamnagar', status: 'done' },
+  { time: 'Sep 13, 09:00', event: 'Dispatch — truck departed plant gate', location: 'Jamnagar, Gujarat', status: 'done' },
+  { time: 'Sep 13, 14:30', event: 'Highway transit', location: 'Rajkot, Gujarat', status: 'done' },
+  { time: 'Sep 14, 06:00', event: 'State border crossing — GJ/MH', location: 'Vapi - Palghar Border', status: 'active' },
+  { time: 'Sep 14, 18:00 (est)', event: 'Arrival at Mumbai city limits', location: 'Mumbai, Maharashtra', status: 'pending' },
+  { time: 'Sep 14, 20:00 (est)', event: 'Final delivery — ICS Plant', location: 'Navi Mumbai', status: 'pending' },
+  { time: 'Sep 15 (est)', event: 'Quality acceptance & CO₂ Passport issued', location: 'ICS Plant', status: 'pending' },
 ];
 
-const routePoints = [
-  { name: 'Heidelberg, DE', x: 52, y: 38, done: true },
-  { name: 'Kehl (border)', x: 50, y: 40, done: true },
-  { name: 'Antwerp, BE', x: 47, y: 33, done: false, active: true },
-  { name: 'Atlantic Ocean', x: 30, y: 40, done: false },
-  { name: 'Halifax, NS, CA', x: 14, y: 35, done: false },
-];
 
 export default function Logistics() {
   const { navigate } = useApp();
@@ -33,7 +25,7 @@ export default function Logistics() {
       <div className="max-w-screen-xl mx-auto px-6 py-8">
         <SectionHeader
           title="Logistics Tracking"
-          sub="Order CC-O-9012 · Heidelberg Materials AG → CarbonCure Technologies"
+          sub="Order CC-O-9012 · Reliance Industries → Indian Concrete Solutions"
           action={
             <div className="flex gap-2">
               <Btn variant="outline" onClick={() => navigate('digital-passport')}>CO₂ Passport</Btn>
@@ -46,8 +38,8 @@ export default function Logistics() {
         <div className="bg-blue-50 border border-blue-200 rounded p-4 mb-6 flex items-center gap-4">
           <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse" />
           <div>
-            <div className="text-sm font-semibold text-blue-900">In Transit — Antwerp Port Loading</div>
-            <div className="text-xs text-blue-700 mt-0.5">Tank TK-4921 · 500 t Industrial Grade CO₂ (liquid) · ETA Halifax: Sep 21, 2026</div>
+            <div className="text-sm font-semibold text-blue-900">In Transit — State Border Crossing (GJ/MH)</div>
+            <div className="text-xs text-blue-700 mt-0.5">Tank TK-4921 · 500 t Industrial Grade CO₂ (liquid) · ETA Mumbai: Sep 14, 2026</div>
           </div>
           <div className="ml-auto text-right">
             <div className="text-xs text-blue-700">Progress</div>
@@ -60,43 +52,16 @@ export default function Logistics() {
             {/* Route map (SVG schematic) */}
             <Card className="p-6 overflow-hidden">
               <div className="text-sm font-semibold text-zinc-900 mb-4">Route Map</div>
-              <div className="relative bg-zinc-50 rounded border border-zinc-200 h-52 overflow-hidden">
-                <svg viewBox="0 0 100 60" className="w-full h-full">
-                  {/* Ocean background */}
-                  <rect x="0" y="0" width="100" height="60" fill="#EFF6FF" />
-                  {/* Europe land */}
-                  <path d="M44 20 L58 20 L62 30 L60 45 L50 50 L44 44 L40 35 Z" fill="#F4F4F2" stroke="#E4E4E7" strokeWidth="0.3" />
-                  {/* North America */}
-                  <path d="M0 20 L20 20 L22 45 L12 50 L0 45 Z" fill="#F4F4F2" stroke="#E4E4E7" strokeWidth="0.3" />
-                  {/* Route line */}
-                  <polyline
-                    points={routePoints.map(p => `${p.x},${p.y}`).join(' ')}
-                    fill="none"
-                    stroke="#15572A"
-                    strokeWidth="0.8"
-                    strokeDasharray="2,1"
-                  />
-                  {/* Completed route */}
-                  <polyline
-                    points="52,38 50,40 47,33"
-                    fill="none"
-                    stroke="#15572A"
-                    strokeWidth="1.2"
-                  />
-                  {/* Points */}
-                  {routePoints.map((p, i) => (
-                    <g key={i}>
-                      <circle
-                        cx={p.x} cy={p.y} r={p.active ? 2.5 : 1.5}
-                        fill={p.done ? '#15572A' : p.active ? '#2563EB' : '#D4D4D8'}
-                        stroke="white" strokeWidth="0.5"
-                      />
-                      <text x={p.x} y={p.y - 3} textAnchor="middle" fontSize="2" fill="#52525B">{p.name}</text>
-                    </g>
-                  ))}
-                  {/* Ship icon at current position */}
-                  <text x="47" y="32" fontSize="4" textAnchor="middle">🚢</text>
-                </svg>
+              <div className="relative bg-zinc-50 rounded border border-zinc-200 h-[300px] overflow-hidden">
+                <iframe 
+                  title="Tracking Map"
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=70.0,18.0,75.0,24.0&layer=mapnik&marker=19.0760,72.8777"
+                  style={{ border: 'none' }}
+                />
               </div>
             </Card>
 
@@ -148,10 +113,10 @@ export default function Logistics() {
                   { k: 'Quantity', v: '500 t' },
                   { k: 'Purity (certified)', v: '99.63% vol' },
                   { k: 'Temperature', v: '-20°C' },
-                  { k: 'Carrier', v: 'Messer Transport' },
-                  { k: 'Vessel', v: 'MV Atlantic Crest' },
-                  { k: 'Bill of Lading', v: 'ATL-2026-09-4821' },
-                  { k: 'ETA Halifax', v: 'Sep 21, 2026' },
+                  { k: 'Carrier', v: 'Adani Logistics' },
+                  { k: 'Vehicle', v: 'MH-04-AB-1234' },
+                  { k: 'e-Way Bill', v: 'EWB-2026-09-4821' },
+                  { k: 'ETA Mumbai', v: 'Sep 14, 2026' },
                 ].map((row, i) => (
                   <div key={i} className="flex justify-between text-xs border-b border-zinc-100 pb-1.5 last:border-0">
                     <span className="text-zinc-500">{row.k}</span>
@@ -166,8 +131,8 @@ export default function Logistics() {
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-3">Shipping Documents</div>
               <div className="space-y-2">
                 {[
-                  { name: 'Bill of Lading', status: 'Available' },
-                  { name: 'CMR Waybill', status: 'Available' },
+                  { name: 'e-Way Bill', status: 'Available' },
+                  { name: 'LR Copy', status: 'Available' },
                   { name: 'Batch Purity Certificate', status: 'Available' },
                   { name: 'ISCC PLUS Chain of Custody', status: 'Available' },
                   { name: 'Delivery Note', status: 'Pending' },

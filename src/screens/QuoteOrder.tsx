@@ -22,7 +22,7 @@ export default function QuoteOrder() {
           <p className="text-zinc-500 mb-2">Reference: <span className="font-mono font-medium">CC-Q-{Math.floor(Math.random() * 9000) + 1000}</span></p>
           <p className="text-zinc-500 text-sm mb-8">
             {mode === 'quote'
-              ? 'Heidelberg Materials AG has been notified and will respond within 24 hours.'
+              ? 'UltraTech Cement Ltd has been notified and will respond within 24 hours.'
               : 'Your order has been placed. Proceed to contract signing to complete the transaction.'}
           </p>
           <div className="flex justify-center gap-3">
@@ -70,7 +70,7 @@ export default function QuoteOrder() {
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-sm font-semibold text-zinc-900">Industrial Grade CO₂ — Liquid</div>
-                  <div className="text-xs text-zinc-400 mt-0.5">Heidelberg Materials AG · CC-L-4820</div>
+                  <div className="text-xs text-zinc-400 mt-0.5">UltraTech Cement Ltd · CC-L-4820</div>
                 </div>
                 <div className="flex gap-2">
                   <Badge variant="green">VERIFIED</Badge>
@@ -95,7 +95,7 @@ export default function QuoteOrder() {
                 </div>
                 <div>
                   <label className="text-xs text-zinc-500 mb-1.5 block">Delivery address</label>
-                  <Input value="CarbonCure Plant, 1465 Hammonds Plains Rd, Halifax, NS B4B 1P4, Canada" />
+                  <Input value="ICS Plant, MIDC, Navi Mumbai 400705, India" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -111,8 +111,8 @@ export default function QuoteOrder() {
                   <div>
                     <label className="text-xs text-zinc-500 mb-1.5 block">Target price (optional)</label>
                     <div className="flex gap-2 items-center">
-                      <Input value="105" className="w-32" />
-                      <span className="text-sm text-zinc-500">USD / tonne delivered</span>
+                      <Input value="9,500" className="w-32" />
+                      <span className="text-sm text-zinc-500">INR / tonne delivered</span>
                     </div>
                   </div>
                 )}
@@ -145,16 +145,16 @@ export default function QuoteOrder() {
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">Price Summary</div>
               <div className="space-y-2.5 text-sm">
                 <div className="flex justify-between text-zinc-600">
-                  <span>500 t × $89/t</span><span className="font-mono">$44,500</span>
+                  <span>500 t × ₹7,500/t</span><span className="font-mono">₹37,50,000</span>
                 </div>
                 <div className="flex justify-between text-zinc-600">
-                  <span>Logistics est.</span><span className="font-mono">$11,500</span>
+                  <span>Logistics est.</span><span className="font-mono">₹4,50,000</span>
                 </div>
                 <div className="flex justify-between text-zinc-500 text-xs border-b border-zinc-100 pb-2">
-                  <span>Platform fee (2%)</span><span className="font-mono">$890</span>
+                  <span>Platform fee (2%)</span><span className="font-mono">₹75,000</span>
                 </div>
                 <div className="flex justify-between font-semibold text-zinc-900">
-                  <span>Total estimated</span><span className="font-mono text-[#15572A]">$56,890</span>
+                  <span>Total estimated</span><span className="font-mono text-[#15572A]">₹42,75,000</span>
                 </div>
                 <div className="text-xs text-zinc-400">Prices confirmed in seller's formal quote response.</div>
               </div>
@@ -173,7 +173,7 @@ export default function QuoteOrder() {
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-3">What happens next</div>
               <div className="space-y-2.5 text-xs text-zinc-600">
                 {(mode === 'quote' ? [
-                  '1. RFQ sent to Heidelberg Materials AG',
+                  '1. RFQ sent to UltraTech Cement Ltd',
                   '2. Seller reviews and responds (≤24h)',
                   '3. You receive formal quote by email',
                   '4. Accept quote to place order',

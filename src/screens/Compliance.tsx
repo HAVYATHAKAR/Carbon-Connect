@@ -3,12 +3,12 @@ import { Card, Badge, Btn, SectionHeader, ProgressBar, StatusDot } from '../comp
 import Nav from '../components/Nav';
 
 const checks = [
-  { name: 'Identity Verification (KYC)', status: 'complete', detail: 'Director ID verified — Klaus Weber, DOB verified', updated: '2026-09-08' },
-  { name: 'Business Registration (KYB)', status: 'complete', detail: 'Registered DE811708516 · Amtsgericht Heidelberg HRB 330082', updated: '2026-09-08' },
-  { name: 'Beneficial Ownership', status: 'complete', detail: 'HeidelbergCement AG (100% direct ownership) declared', updated: '2026-09-09' },
-  { name: 'Sanctions Screening (EU/OFAC/UN)', status: 'complete', detail: 'No matches — Dow Jones Risk & Compliance, Sep 2026', updated: '2026-09-10' },
+  { name: 'Identity Verification (KYC)', status: 'complete', detail: 'Director ID verified — Amit Sharma, Aadhaar/PAN verified', updated: '2026-09-08' },
+  { name: 'Business Registration (KYB)', status: 'complete', detail: 'Registered U26940MH2000PLC128420 · MCA India', updated: '2026-09-08' },
+  { name: 'Beneficial Ownership', status: 'complete', detail: 'Aditya Birla Group (100% direct ownership) declared', updated: '2026-09-09' },
+  { name: 'Sanctions Screening (EU/OFAC/UN/India)', status: 'complete', detail: 'No matches — Dow Jones Risk & Compliance, Sep 2026', updated: '2026-09-10' },
   { name: 'PEP Screening', status: 'complete', detail: 'No politically exposed persons identified', updated: '2026-09-10' },
-  { name: 'Environmental Permit Verification', status: 'complete', detail: 'EU ETS installation permit DE-9-0001234 confirmed active', updated: '2026-09-09' },
+  { name: 'Environmental Permit Verification', status: 'complete', detail: 'CPCB Consent to Operate (CTO) confirmed active', updated: '2026-09-09' },
   { name: 'Financial Soundness Check', status: 'review', detail: 'Annual report 2025 under review — credit assessment in progress', updated: '2026-09-11' },
   { name: 'Trade Finance Pre-Approval', status: 'pending', detail: 'Pending financial check completion', updated: '—' },
 ];
@@ -17,8 +17,8 @@ const certs = [
   { name: 'ISO 9001:2015 Quality Management', issuer: 'TÜV SÜD', expiry: '2027-03-15', status: 'valid' },
   { name: 'ISO 14001:2015 Environmental Management', issuer: 'Bureau Veritas', expiry: '2027-03-15', status: 'valid' },
   { name: 'ISCC PLUS (Sustainability)', issuer: 'ISCC System GmbH', expiry: '2026-11-30', status: 'valid' },
-  { name: 'EU ETS Compliance Certificate', issuer: 'German Emissions Authority', expiry: '2027-01-01', status: 'valid' },
-  { name: 'ADR 2023 (Dangerous Goods Transport)', issuer: 'DEKRA', expiry: '2025-12-31', status: 'expiring' },
+  { name: 'BIS IS:15222 Compliance', issuer: 'Bureau of Indian Standards', expiry: '2027-01-01', status: 'valid' },
+  { name: 'CMVR (Hazardous Goods Transport)', issuer: 'RTO India', expiry: '2025-12-31', status: 'expiring' },
 ];
 
 const notice = [
@@ -40,7 +40,7 @@ export default function Compliance() {
           sub="All regulatory checks, certifications and compliance status for your organization."
           action={
             <div className="flex gap-2">
-              <Btn variant="outline">Download report</Btn>
+              <Btn variant="outline" onClick={() => alert('Downloading Compliance_Report.pdf...')}>Download report</Btn>
               <Btn onClick={() => navigate(role === 'seller' ? 'seller-dashboard' : 'buyer-dashboard')}>
                 Go to Dashboard →
               </Btn>
@@ -144,7 +144,7 @@ export default function Compliance() {
               <div className="space-y-3">
                 <div className="flex items-start gap-2 text-xs text-zinc-700">
                   <span className="text-amber-500 mt-0.5 shrink-0">○</span>
-                  Renew ADR 2023 certificate before Dec 31, 2025
+                  Renew CMVR certificate before Dec 31, 2025
                 </div>
                 <div className="flex items-start gap-2 text-xs text-zinc-700">
                   <span className="text-amber-500 mt-0.5 shrink-0">○</span>

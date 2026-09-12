@@ -33,7 +33,7 @@ export default function QualityVerification() {
           </div>
           <h2 className="text-xl font-semibold text-zinc-900 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>Delivery Accepted</h2>
           <p className="text-zinc-500 text-sm mb-2">All quality parameters verified. CO₂ Digital Passport has been issued.</p>
-          <p className="text-zinc-500 text-sm mb-6">Payment funds will be released to Heidelberg Materials AG within 2 business days.</p>
+          <p className="text-zinc-500 text-sm mb-6">Payment funds will be released to UltraTech Cement Ltd within 2 business days.</p>
           <div className="flex justify-center gap-3">
             <Btn onClick={() => navigate('digital-passport')}>View CO₂ Passport →</Btn>
             <Btn variant="outline" onClick={() => navigate('impact-mrv')}>Impact report →</Btn>
@@ -64,7 +64,7 @@ export default function QualityVerification() {
             <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white text-lg">✓</div>
             <div>
               <div className="text-sm font-semibold text-green-900">All quality checks passed</div>
-              <div className="text-xs text-green-700">12 of 12 parameters within specification · Verified by Bureau Veritas on Sep 21, 2026</div>
+              <div className="text-xs text-green-700">12 of 12 parameters within specification · Verified by Bureau Veritas India on Sep 21, 2026</div>
             </div>
           </div>
           <Badge variant="green">QUALITY PASSED</Badge>
@@ -76,7 +76,7 @@ export default function QualityVerification() {
             <Card className="overflow-hidden">
               <div className="px-6 py-4 border-b border-zinc-100 flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-zinc-900">Quality Analysis Results</h3>
-                <span className="text-xs text-zinc-400">Bureau Veritas · Sep 21, 2026 · EN 13279 + ISO 8573</span>
+                <span className="text-xs text-zinc-400">Bureau Veritas India · Sep 21, 2026 · BIS IS:15222</span>
               </div>
               <div className="divide-y divide-zinc-100">
                 <div className="px-6 py-2 grid grid-cols-4 gap-4">
@@ -127,8 +127,8 @@ export default function QualityVerification() {
                   { k: 'Net delivered', v: '499.4 tonnes' },
                   { k: 'CO₂ purity', v: '99.63% vol' },
                   { k: 'Delivery date', v: 'Sep 21, 2026' },
-                  { k: 'Analysis lab', v: 'Bureau Veritas' },
-                  { k: 'Standard', v: 'EN 13279' },
+                  { k: 'Analysis lab', v: 'Bureau Veritas India' },
+                  { k: 'Standard', v: 'BIS IS:15222' },
                 ].map((row, i) => (
                   <div key={i} className="flex justify-between border-b border-zinc-100 pb-1.5 last:border-0">
                     <span className="text-zinc-500">{row.k}</span>

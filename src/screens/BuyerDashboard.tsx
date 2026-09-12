@@ -3,14 +3,14 @@ import { Card, StatCard, Badge, Btn, SectionHeader, Table, ScorePill } from '../
 import Nav from '../components/Nav';
 
 const reqs = [
-  { id: 'CC-R-2041', name: 'Q4 2026 Concrete Mineralization', grade: 'Captured CO₂ (≥95%)', vol: '3,200 t', budget: '$67–80/t', status: 'active', matches: 8 },
-  { id: 'CC-R-2039', name: 'Food Carbonation — Winter Stock', grade: 'Food Grade (≥99.9%)', vol: '400 t', budget: '$140–165/t', status: 'active', matches: 3 },
+  { id: 'CC-R-2041', name: 'Q4 2026 Concrete Mineralization', grade: 'Captured CO₂ (≥95%)', vol: '3,200 t', budget: '₹5,500–6,500/t', status: 'active', matches: 8 },
+  { id: 'CC-R-2039', name: 'Food Carbonation — Winter Stock', grade: 'Food Grade (≥99.9%)', vol: '400 t', budget: '₹11,500–13,500/t', status: 'active', matches: 3 },
 ];
 
 const orders = [
-  { id: 'CC-O-9012', supplier: 'Heidelberg Materials AG', product: 'Food Grade CO₂', qty: '400 t', value: '$59,200', status: 'in-transit', eta: 'Sep 14' },
-  { id: 'CC-O-9008', supplier: 'BASF SE — Ludwigshafen', product: 'Industrial Grade CO₂', qty: '1,800 t', value: '$164,700', status: 'quality-check', eta: 'Sep 10' },
-  { id: 'CC-O-8976', supplier: 'Tata Steel Europe', product: 'Captured CO₂', qty: '2,600 t', value: '$174,200', status: 'delivered', eta: 'Sep 02' },
+  { id: 'CC-O-9012', supplier: 'UltraTech Cement Ltd', product: 'Food Grade CO₂', qty: '400 t', value: '₹49.6L', status: 'in-transit', eta: 'Sep 14' },
+  { id: 'CC-O-9008', supplier: 'Reliance Industries', product: 'Industrial Grade CO₂', qty: '1,800 t', value: '₹1.3Cr', status: 'quality-check', eta: 'Sep 10' },
+  { id: 'CC-O-8976', supplier: 'Tata Steel India', product: 'Captured CO₂', qty: '2,600 t', value: '₹1.45Cr', status: 'delivered', eta: 'Sep 02' },
 ];
 
 const flowData = [
@@ -28,7 +28,7 @@ export default function BuyerDashboard() {
       <div className="max-w-screen-xl mx-auto px-6 py-8">
         <SectionHeader
           title="Buyer Dashboard"
-          sub="CarbonCure Technologies Inc. · Halifax, Nova Scotia, Canada"
+          sub="Indian Concrete Solutions · Mumbai, Maharashtra, India"
           action={
             <div className="flex gap-2">
               <Btn variant="outline" onClick={() => navigate('compliance')}>Compliance</Btn>
@@ -40,7 +40,7 @@ export default function BuyerDashboard() {
         <div className="grid grid-cols-5 gap-4 mb-8">
           <StatCard label="Active Requirements" value="2" sub="8 supplier matches" />
           <StatCard label="CO₂ Procured (Sep)" value="2,700 t" trend="+22%" color="green" />
-          <StatCard label="Avg. Delivered Cost" value="$74/t" trend="-5%" color="green" />
+          <StatCard label="Avg. Delivered Cost" value="₹6,100/t" trend="-5%" color="green" />
           <StatCard label="CO₂ Utilized (YTD)" value="18,400 t" sub="in concrete mineralization" />
           <StatCard label="CO₂ Avoided (YTD)" value="9,200 t" color="green" sub="measured & verified" />
         </div>

@@ -3,16 +3,16 @@ import { Card, StatCard, Badge, Btn, SectionHeader, Table, ProgressBar, StatusDo
 import Nav from '../components/Nav';
 
 const listings = [
-  { id: 'CC-L-4821', grade: 'Food Grade CO₂', purity: '99.92%', vol: '1,200 t', price: '$148/t', status: 'active', inquiries: 7 },
-  { id: 'CC-L-4820', grade: 'Industrial Grade CO₂', purity: '99.51%', vol: '8,400 t', price: '$89/t', status: 'active', inquiries: 14 },
-  { id: 'CC-L-4815', grade: 'Captured CO₂ (flue gas)', purity: '98.10%', vol: '24,000 t', price: '$67/t', status: 'active', inquiries: 22 },
-  { id: 'CC-L-4801', grade: 'Technical Grade CO₂', purity: '98.40%', vol: '6,000 t', price: '$54/t', status: 'draft', inquiries: 0 },
+  { id: 'CC-L-4821', grade: 'Food Grade CO₂', purity: '99.92%', vol: '1,200 t', price: '₹12,400/t', status: 'active', inquiries: 7 },
+  { id: 'CC-L-4820', grade: 'Industrial Grade CO₂', purity: '99.51%', vol: '8,400 t', price: '₹7,500/t', status: 'active', inquiries: 14 },
+  { id: 'CC-L-4815', grade: 'Captured CO₂ (flue gas)', purity: '98.10%', vol: '24,000 t', price: '₹5,600/t', status: 'active', inquiries: 22 },
+  { id: 'CC-L-4801', grade: 'Technical Grade CO₂', purity: '98.40%', vol: '6,000 t', price: '₹4,500/t', status: 'draft', inquiries: 0 },
 ];
 
 const orders = [
-  { id: 'CC-O-9012', buyer: 'Nordic Food Systems AS', product: 'Food Grade CO₂', qty: '400 t', value: '$59,200', status: 'in-transit', eta: 'Sep 14' },
-  { id: 'CC-O-9008', buyer: 'CarbonCure Technologies', product: 'Captured CO₂', qty: '1,800 t', value: '$120,600', status: 'delivered', eta: 'Sep 10' },
-  { id: 'CC-O-8994', buyer: 'Vertis Greenhouse BV', product: 'Industrial Grade CO₂', qty: '2,200 t', value: '$195,800', status: 'contract', eta: 'Sep 20' },
+  { id: 'CC-O-9012', buyer: 'Indian Concrete Solutions', product: 'Food Grade CO₂', qty: '400 t', value: '₹49.6L', status: 'in-transit', eta: 'Sep 14' },
+  { id: 'CC-O-9008', buyer: 'Tata Chemicals Ltd', product: 'Captured CO₂', qty: '1,800 t', value: '₹1.0Cr', status: 'delivered', eta: 'Sep 10' },
+  { id: 'CC-O-8994', buyer: 'Reliance Retail (Agri)', product: 'Industrial Grade CO₂', qty: '2,200 t', value: '₹1.65Cr', status: 'contract', eta: 'Sep 20' },
 ];
 
 const revenueData = [
@@ -30,7 +30,7 @@ export default function SellerDashboard() {
       <div className="max-w-screen-xl mx-auto px-6 py-8">
         <SectionHeader
           title="Seller Dashboard"
-          sub="Heidelberg Materials AG · Cement Plant Heidelberg, Germany"
+          sub="UltraTech Cement Ltd · Mumbai, India"
           action={
             <div className="flex gap-2">
               <Btn variant="outline" onClick={() => navigate('compliance')}>Compliance</Btn>
@@ -43,7 +43,7 @@ export default function SellerDashboard() {
         <div className="grid grid-cols-5 gap-4 mb-8">
           <StatCard label="Active Listings" value="3" sub="1 draft" />
           <StatCard label="Open Inquiries" value="43" trend="+12" color="green" />
-          <StatCard label="Revenue (Sep)" value="$375K" trend="+18%" color="green" />
+          <StatCard label="Revenue (Sep)" value="₹3.1Cr" trend="+18%" color="green" />
           <StatCard label="CO₂ Sold (Sep)" value="4,400 t" sub="of 9,600 t available" />
           <StatCard label="Avg. Delivery SLA" value="98.7%" color="green" />
         </div>
@@ -54,14 +54,14 @@ export default function SellerDashboard() {
             <div className="flex items-center justify-between mb-6">
               <div>
                 <div className="text-sm font-semibold text-zinc-900">Monthly Revenue</div>
-                <div className="text-xs text-zinc-400 font-mono mt-0.5">Apr – Sep 2026 · USD thousands</div>
+                <div className="text-xs text-zinc-400 font-mono mt-0.5">Apr – Sep 2026 · INR Lakhs</div>
               </div>
               <Badge variant="green">+18% MoM</Badge>
             </div>
             <div className="flex items-end gap-3 h-36">
               {revenueData.map((d, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <div className="text-xs text-zinc-400 font-mono">${d.v}K</div>
+                  <div className="text-xs text-zinc-400 font-mono">₹{d.v}L</div>
                   <div
                     className={`w-full rounded-t transition-all ${i === revenueData.length - 1 ? 'bg-[#15572A]' : 'bg-zinc-200'}`}
                     style={{ height: `${(d.v / maxRev) * 100}%` }}

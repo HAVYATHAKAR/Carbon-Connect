@@ -19,10 +19,10 @@ const initialPending = [
 type PendingStatus = 'pending' | 'approved' | 'reviewing';
 
 const recent = [
-  { id: 'CC-O-9014', seller: 'BASF SE', buyer: 'CarbonCure Tech', vol: '800 t', value: '$67,200', status: 'active' },
-  { id: 'CC-O-9013', seller: 'RWE Power AG', buyer: 'Vertis Greenhouse', vol: '1,400 t', value: '$126,000', status: 'contract' },
-  { id: 'CC-O-9012', seller: 'Heidelberg Mat.', buyer: 'CarbonCure Tech', vol: '500 t', value: '$56,890', status: 'in-transit' },
-  { id: 'CC-O-9011', seller: 'Tata Steel EU', buyer: 'Nordic Food', vol: '300 t', value: '$44,700', status: 'delivered' },
+  { id: 'CC-O-9014', seller: 'Reliance Ind.', buyer: 'L&T Const.', vol: '800 t', value: '₹56.0L', status: 'active' },
+  { id: 'CC-O-9013', seller: 'Tata Steel', buyer: 'Godrej Agrovet', vol: '1,400 t', value: '₹1.05Cr', status: 'contract' },
+  { id: 'CC-O-9012', seller: 'UltraTech Cement', buyer: 'Indian Concrete', vol: '500 t', value: '₹42.75L', status: 'in-transit' },
+  { id: 'CC-O-9011', seller: 'JSW Steel', buyer: 'Reliance Retail', vol: '300 t', value: '₹37.2L', status: 'delivered' },
 ];
 
 export default function AdminDashboard() {
@@ -60,7 +60,7 @@ export default function AdminDashboard() {
           <StatCard label="Active Listings" value="94" sub="12 pending review" />
           <StatCard label="Open Orders" value="47" />
           <StatCard label="Volume (Sep)" value="590K t" trend="+19%" color="green" />
-          <StatCard label="GMV (Sep)" value="$41.2M" trend="+22%" color="green" />
+          <StatCard label="GMV (Sep)" value="₹34.5Cr" trend="+22%" color="green" />
           <StatCard label="Anomalies" value="3" color="red" sub="2 high priority" />
         </div>
 
@@ -70,14 +70,14 @@ export default function AdminDashboard() {
             <div className="flex items-center justify-between mb-5">
               <div>
                 <div className="text-sm font-semibold text-zinc-900">Platform Volume (GMV)</div>
-                <div className="text-xs text-zinc-400 font-mono mt-0.5">Apr – Sep 2026 · USD millions</div>
+                <div className="text-xs text-zinc-400 font-mono mt-0.5">Apr – Sep 2026 · INR Crores</div>
               </div>
               <Badge variant="green">+19% MoM</Badge>
             </div>
             <div className="flex items-end gap-3 h-36">
               {monthlyVol.map((d, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <div className="text-xs text-zinc-400 font-mono">${d.v}K</div>
+                  <div className="text-xs text-zinc-400 font-mono">₹{(d.v / 15).toFixed(1)}Cr</div>
                   <div
                     className={`w-full rounded-t ${i === monthlyVol.length - 1 ? 'bg-[#15572A]' : 'bg-zinc-200'}`}
                     style={{ height: `${(d.v / maxV) * 100}%` }}

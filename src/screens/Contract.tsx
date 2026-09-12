@@ -25,7 +25,7 @@ export default function Contract() {
           <div className="flex gap-2">
             <Btn variant="outline">Download PDF</Btn>
             {!signed && <Btn onClick={() => setSigned(true)}>Sign contract →</Btn>}
-            {signed && <Btn onClick={() => navigate('payment')}>Proceed to payment →</Btn>}
+            {signed && <Btn onClick={() => navigate('buyer-dashboard')}>Back to Dashboard →</Btn>}
           </div>
         </div>
 
@@ -43,17 +43,17 @@ export default function Contract() {
               <div className="grid grid-cols-2 gap-6 mb-6 pb-6 border-b border-zinc-100">
                 <div>
                   <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-2">Seller</div>
-                  <div className="text-sm font-semibold text-zinc-900">Heidelberg Materials AG</div>
-                  <div className="text-xs text-zinc-500 mt-1">Berliner Str. 6, 69120 Heidelberg, Germany</div>
-                  <div className="text-xs text-zinc-500">VAT: DE811708516</div>
-                  <div className="text-xs text-zinc-500">Represented by: Klaus Weber, CO₂ Sales Manager</div>
+                  <div className="text-sm font-semibold text-zinc-900">UltraTech Cement Ltd</div>
+                  <div className="text-xs text-zinc-500 mt-1">Bandra Kurla Complex, Mumbai, Maharashtra 400051, India</div>
+                  <div className="text-xs text-zinc-500">GSTIN: 27AAACU1234F1Z5</div>
+                  <div className="text-xs text-zinc-500">Represented by: Amit Sharma, CO₂ Sales Manager</div>
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-2">Buyer</div>
-                  <div className="text-sm font-semibold text-zinc-900">CarbonCure Technologies Inc.</div>
-                  <div className="text-xs text-zinc-500 mt-1">1465 Hammonds Plains Rd, Halifax, NS B4B 1P4, Canada</div>
-                  <div className="text-xs text-zinc-500">BN: 123456789</div>
-                  <div className="text-xs text-zinc-500">Represented by: Dr. Amara Osei-Mensah, Head of Procurement</div>
+                  <div className="text-sm font-semibold text-zinc-900">Indian Concrete Solutions</div>
+                  <div className="text-xs text-zinc-500 mt-1">TTC Industrial Area, MIDC, Navi Mumbai 400705, India</div>
+                  <div className="text-xs text-zinc-500">GSTIN: 27AABBC1234F1Z6</div>
+                  <div className="text-xs text-zinc-500">Represented by: Priya Desai, Head of Procurement</div>
                 </div>
               </div>
 
@@ -72,24 +72,24 @@ export default function Contract() {
                       ['Physical state', 'Liquid (cryogenic, -20°C, 18.5 bar)'],
                       ['Max H₂O', '10 ppm'],
                       ['Max SO₂', '0.1 ppm'],
-                      ['Standard', 'EN 13279 / EIGA Doc 70'],
-                      ['Certifications', 'ISO 9001, ISCC PLUS, EU ETS'],
+                      ['Standard', 'BIS IS:15222'],
+                      ['Certifications', 'ISO 9001, ISCC PLUS, CPCB CTO'],
                     ],
                   },
                   {
                     title: '3. Quantity and Delivery',
-                    body: 'Total quantity: 500 (five hundred) metric tonnes, tolerance ±2%. Delivery: DAP CarbonCure Plant, Halifax, Nova Scotia, Canada (Incoterms 2020). Delivery date: October 15, 2026 ±3 business days. Mode: Cryogenic road tanker via approved logistics partner.',
+                    body: 'Total quantity: 500 (five hundred) metric tonnes, tolerance ±2%. Delivery: DAP ICS Plant, Navi Mumbai (Incoterms 2020). Delivery date: October 15, 2026 ±3 business days. Mode: Cryogenic road tanker via approved logistics partner.',
                   },
                   {
                     title: '4. Price and Payment',
                     table: [
-                      ['Ex-works price', '$89.00 / tonne'],
-                      ['Logistics', '$23.00 / tonne (est.)'],
-                      ['Platform fee', '$1.78 / tonne'],
-                      ['Total delivered est.', '$113.78 / tonne'],
-                      ['Total order value', '$56,890'],
+                      ['Ex-works price', '₹7,500.00 / tonne'],
+                      ['Logistics', '₹900.00 / tonne (est.)'],
+                      ['Platform fee', '₹150.00 / tonne'],
+                      ['Total delivered est.', '₹8,550.00 / tonne'],
+                      ['Total order value', '₹42,75,000'],
                       ['Payment terms', 'Net 30 from invoice date'],
-                      ['Currency', 'USD'],
+                      ['Currency', 'INR'],
                     ],
                   },
                   {
@@ -102,7 +102,7 @@ export default function Contract() {
                   },
                   {
                     title: '7. Dispute Resolution',
-                    body: 'Disputes shall first be submitted to Carbon-Connect\'s Dispute Resolution Centre for mediation (up to 30 days). Unresolved disputes shall be referred to ICC arbitration under ICC Rules in Geneva, Switzerland. Governing law: Swiss law.',
+                    body: 'Disputes shall first be submitted to Carbon-Connect\'s Dispute Resolution Centre for mediation (up to 30 days). Unresolved disputes shall be referred to arbitration in Mumbai, India. Governing law: Indian law.',
                   },
                 ].map((section, i) => (
                   <div key={i} className="border-b border-zinc-100 pb-5 last:border-0">
@@ -128,8 +128,8 @@ export default function Contract() {
               <div className="mt-8 pt-6 border-t-2 border-zinc-200">
                 <div className="grid grid-cols-2 gap-8">
                   {[
-                    { party: 'Seller', name: 'Klaus Weber', org: 'Heidelberg Materials AG', date: '2026-09-12', signed: true },
-                    { party: 'Buyer', name: 'Dr. Amara Osei-Mensah', org: 'CarbonCure Technologies Inc.', date: signed ? '2026-09-12' : '—', signed },
+                    { party: 'Seller', name: 'Amit Sharma', org: 'UltraTech Cement Ltd', date: '2026-09-12', signed: true },
+                    { party: 'Buyer', name: 'Priya Desai', org: 'Indian Concrete Solutions', date: signed ? '2026-09-12' : '—', signed },
                   ].map((sig, i) => (
                     <div key={i}>
                       <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-2">{sig.party}</div>
@@ -179,8 +179,8 @@ export default function Contract() {
                 </Btn>
               )}
               {signed && (
-                <Btn className="w-full mt-5 justify-center" onClick={() => navigate('payment')}>
-                  Proceed to payment →
+                <Btn className="w-full mt-5 justify-center" onClick={() => navigate('buyer-dashboard')}>
+                  Back to Dashboard →
                 </Btn>
               )}
             </Card>

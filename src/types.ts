@@ -14,13 +14,12 @@ export type Screen =
   | 'pricing-breakdown'
   | 'quote-order'
   | 'contract'
-  | 'payment'
   | 'logistics'
   | 'quality-verification'
   | 'digital-passport'
-  | 'dispute-resolution'
   | 'impact-mrv'
   | 'admin-dashboard'
-  | 'anomaly-monitoring';
+  | 'anomaly-monitoring'
+  | 'profile';
 
 export type Role = 'seller' | 'buyer' | 'admin' | null;

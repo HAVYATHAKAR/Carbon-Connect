@@ -6,7 +6,6 @@ interface NavItem { label: string; screen: Screen }
 const sellerNav: NavItem[] = [
   { label: 'Dashboard', screen: 'seller-dashboard' },
   { label: 'Create Listing', screen: 'create-listing' },
-  { label: 'Marketplace', screen: 'marketplace' },
   { label: 'Logistics', screen: 'logistics' },
   { label: 'Impact / MRV', screen: 'impact-mrv' },
 ];
@@ -39,7 +38,7 @@ export default function Nav() {
 
   const nav = getNav(role);
   const roleLabel = role === 'seller' ? 'Seller' : role === 'buyer' ? 'Buyer' : 'Admin';
-  const orgName = role === 'seller' ? 'Heidelberg Materials' : role === 'buyer' ? 'CarbonCure Tech' : 'Platform Admin';
+  const orgName = role === 'seller' ? 'UltraTech Cement' : role === 'buyer' ? 'Indian Concrete Solutions' : 'Platform Admin';
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-zinc-200">
@@ -77,7 +76,7 @@ export default function Nav() {
 
         <div className="flex items-center gap-3 shrink-0">
           <span className="text-xs px-2 py-0.5 rounded-full border border-zinc-200 text-zinc-500 font-mono">{roleLabel}</span>
-          <div className="flex items-center gap-2 cursor-pointer group">
+          <div className="flex items-center gap-2 cursor-pointer group" onClick={() => navigate('profile')}>
             <div className="w-7 h-7 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-medium text-zinc-600">
               {orgName.charAt(0)}
             </div>

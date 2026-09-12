@@ -64,13 +64,13 @@ export default function Registration() {
               </div>
               <div className="px-8 py-2">
                 <FormRow label="Legal company name" hint="As registered with your national authority">
-                  <Input value={role === 'seller' ? 'Heidelberg Materials AG' : 'CarbonCure Technologies Inc.'} />
+                  <Input value={role === 'seller' ? 'UltraTech Cement Ltd' : 'Indian Concrete Solutions'} />
                 </FormRow>
                 <FormRow label="Registration number">
-                  <Input value={role === 'seller' ? 'DE811708516' : 'CA-BC-1047823'} />
+                  <Input value={role === 'seller' ? 'U26940MH2000PLC128420' : 'U26940MH2010PLC128421'} />
                 </FormRow>
                 <FormRow label="Country of incorporation">
-                  <Select options={['Germany', 'Canada', 'United States', 'Norway', 'Netherlands', 'United Kingdom']} value={role === 'seller' ? 'Germany' : 'Canada'} />
+                  <Select options={['India', 'Germany', 'Canada', 'United States', 'Norway', 'Netherlands', 'United Kingdom']} value="India" />
                 </FormRow>
                 <FormRow label="Industry sector">
                   <Select
@@ -87,7 +87,7 @@ export default function Registration() {
                   </div>
                 </FormRow>
                 <FormRow label="Company website">
-                  <Input value={role === 'seller' ? 'https://heidelbergmaterials.com' : 'https://carboncure.com'} />
+                  <Input value={role === 'seller' ? 'https://ultratechcement.com' : 'https://indianconcretesolutions.com'} />
                 </FormRow>
               </div>
             </div>
@@ -101,16 +101,16 @@ export default function Registration() {
               </div>
               <div className="px-8 py-2">
                 <FormRow label="Full name">
-                  <Input value={role === 'seller' ? 'Klaus Weber' : 'Dr. Amara Osei-Mensah'} />
+                  <Input value={role === 'seller' ? 'Amit Sharma' : 'Priya Desai'} />
                 </FormRow>
                 <FormRow label="Job title">
                   <Input value={role === 'seller' ? 'CO₂ Sales Manager' : 'Head of Procurement'} />
                 </FormRow>
                 <FormRow label="Work email">
-                  <Input value={role === 'seller' ? 'k.weber@heidelbergmaterials.com' : 'a.osei@carboncure.com'} type="email" />
+                  <Input value={role === 'seller' ? 'a.sharma@ultratechcement.com' : 'p.desai@indianconcretesolutions.com'} type="email" />
                 </FormRow>
                 <FormRow label="Direct phone">
-                  <Input value={role === 'seller' ? '+49 6221 481-0' : '+1 902 440 3400'} />
+                  <Input value={role === 'seller' ? '+91 22 66917800' : '+91 22 27681234'} />
                 </FormRow>
                 <FormRow label="Password">
                   <Input type="password" placeholder="Min. 12 characters, mixed case + symbol" />
@@ -176,14 +176,14 @@ export default function Registration() {
               <div className="px-8 py-6 space-y-6">
                 {[
                   { section: 'Organization', items: [
-                    { k: 'Name', v: role === 'seller' ? 'Heidelberg Materials AG' : 'CarbonCure Technologies Inc.' },
-                    { k: 'Registration', v: role === 'seller' ? 'DE811708516' : 'CA-BC-1047823' },
-                    { k: 'Country', v: role === 'seller' ? 'Germany' : 'Canada' },
+                    { k: 'Name', v: role === 'seller' ? 'UltraTech Cement Ltd' : 'Indian Concrete Solutions' },
+                    { k: 'Registration', v: role === 'seller' ? 'U26940MH2000PLC128420' : 'U26940MH2010PLC128421' },
+                    { k: 'Country', v: 'India' },
                     { k: 'Sector', v: role === 'seller' ? 'Cement & Construction' : 'Concrete Mineralization' },
                   ]},
                   { section: 'Contact', items: [
-                    { k: 'Name', v: role === 'seller' ? 'Klaus Weber' : 'Dr. Amara Osei-Mensah' },
-                    { k: 'Email', v: role === 'seller' ? 'k.weber@heidelbergmaterials.com' : 'a.osei@carboncure.com' },
+                    { k: 'Name', v: role === 'seller' ? 'Amit Sharma' : 'Priya Desai' },
+                    { k: 'Email', v: role === 'seller' ? 'a.sharma@ultratechcement.com' : 'p.desai@indianconcretesolutions.com' },
                     { k: 'MFA', v: 'Authenticator app' },
                   ]},
                   { section: 'KYB / KYC', items: [

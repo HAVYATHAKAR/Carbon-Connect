@@ -93,14 +93,14 @@ export default function BuyerRequirement() {
                   </div>
                 </FormRow>
                 <FormRow label="Delivery location" hint="Plant / site address">
-                  <Input value="CarbonCure Plant, 1465 Hammonds Plains Rd, Halifax, NS B4B 1P4, Canada" />
+                  <Input value="ICS Plant, MIDC, Navi Mumbai 400705, India" />
                 </FormRow>
                 <FormRow label="Budget (delivered price)">
                   <div className="flex gap-2 items-center">
-                    <Input value="67" className="w-20" placeholder="Min" />
+                    <Input value="5,000" className="w-20" placeholder="Min" />
                     <span className="text-sm text-zinc-400">–</span>
-                    <Input value="80" className="w-20" placeholder="Max" />
-                    <span className="text-sm text-zinc-500">USD / tonne (delivered)</span>
+                    <Input value="6,500" className="w-20" placeholder="Max" />
+                    <span className="text-sm text-zinc-500">INR / tonne (delivered)</span>
                   </div>
                 </FormRow>
                 <FormRow label="Preferred delivery mode">
@@ -153,10 +153,10 @@ export default function BuyerRequirement() {
               <div className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-3">Market Prices (Sep 2026)</div>
               <div className="space-y-2 text-xs">
                 {[
-                  { g: 'Food Grade', p: '$130–180/t' },
-                  { g: 'Industrial Grade', p: '$75–110/t' },
-                  { g: 'Technical Grade', p: '$45–70/t' },
-                  { g: 'Captured CO₂', p: '$50–85/t' },
+                  { g: 'Food Grade', p: '₹11k–15k/t' },
+                  { g: 'Industrial Grade', p: '₹6k–9k/t' },
+                  { g: 'Technical Grade', p: '₹4k–6k/t' },
+                  { g: 'Captured CO₂', p: '₹4.2k–7k/t' },
                 ].map((g, i) => (
                   <div key={i} className="flex justify-between text-zinc-600 border-b border-zinc-100 pb-1.5 last:border-0">
                     <span>{g.g}</span><span className="font-mono font-medium">{g.p}</span>

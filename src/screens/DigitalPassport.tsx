@@ -61,13 +61,13 @@ export default function DigitalPassport() {
                   <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Origin / Source</div>
                   <div className="space-y-2 text-xs">
                     {[
-                      { k: 'Source facility', v: 'Heidelberg Materials AG — Cement Plant' },
-                      { k: 'Location', v: 'Berliner Str. 6, 69120 Heidelberg, Germany' },
+                      { k: 'Source facility', v: 'UltraTech Cement Ltd — Mumbai Plant' },
+                      { k: 'Location', v: 'Bandra Kurla Complex, Mumbai, India' },
                       { k: 'CO₂ source process', v: 'Cement kiln flue gas — post-combustion amine capture' },
-                      { k: 'Capture method', v: 'MEA amine scrubbing (Fluor Econamine FG+)' },
+                      { k: 'Capture method', v: 'MEA amine scrubbing' },
                       { k: 'Capture date', v: 'Sep 10–12, 2026' },
-                      { k: 'EU ETS Installation', v: 'DE-9-0001234' },
-                      { k: 'ISCC PLUS ID', v: 'ISCC-DE-0000481-20250401' },
+                      { k: 'CPCB CTO', v: 'MH-9-0001234' },
+                      { k: 'ISCC PLUS ID', v: 'ISCC-IN-0000481-20250401' },
                     ].map((r, i) => (
                       <div key={i} className="flex justify-between border-b border-zinc-100 pb-1.5 last:border-0">
                         <span className="text-zinc-500">{r.k}</span>
@@ -106,12 +106,12 @@ export default function DigitalPassport() {
                   <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Chain of Custody</div>
                   <div className="space-y-2 text-xs">
                     {[
-                      { k: 'Loading date', v: 'Sep 13, 2026 07:00 UTC' },
+                      { k: 'Loading date', v: 'Sep 13, 2026 07:00 IST' },
                       { k: 'Tank ID', v: 'TK-4921 (cryogenic road tanker)' },
-                      { k: 'Logistics operator', v: 'Messer Transport GmbH' },
-                      { k: 'Vessel', v: 'MV Atlantic Crest' },
-                      { k: 'Bill of Lading', v: 'ATL-2026-09-4821' },
-                      { k: 'Delivery date', v: 'Sep 21, 2026 14:00 UTC' },
+                      { k: 'Logistics operator', v: 'Adani Logistics' },
+                      { k: 'Vehicle', v: 'MH-04-AB-1234' },
+                      { k: 'e-Way Bill', v: 'EWB-2026-09-4821' },
+                      { k: 'Delivery date', v: 'Sep 14, 2026 14:00 IST' },
                       { k: 'Seal integrity', v: 'Intact (verified)' },
                     ].map((r, i) => (
                       <div key={i} className="flex justify-between border-b border-zinc-100 pb-1.5 last:border-0">
@@ -127,13 +127,13 @@ export default function DigitalPassport() {
                   <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Utilization Record</div>
                   <div className="space-y-2 text-xs">
                     {[
-                      { k: 'Buyer', v: 'CarbonCure Technologies Inc.' },
-                      { k: 'Utilization site', v: 'Halifax Plant, NS, Canada' },
+                      { k: 'Buyer', v: 'Indian Concrete Solutions' },
+                      { k: 'Utilization site', v: 'Navi Mumbai Plant, MH, India' },
                       { k: 'Application', v: 'Ready-mix concrete mineralization' },
-                      { k: 'Injection date', v: 'Sep 22–30, 2026 (est.)' },
+                      { k: 'Injection date', v: 'Sep 15–20, 2026 (est.)' },
                       { k: 'CO₂ permanently stored', v: '499.4 t (in concrete matrix)' },
                       { k: 'MRV standard', v: 'ISO 14064-2' },
-                      { k: 'Verifier', v: 'Pending — SGS Group' },
+                      { k: 'Verifier', v: 'Pending — Bureau Veritas India' },
                     ].map((r, i) => (
                       <div key={i} className="flex justify-between border-b border-zinc-100 pb-1.5 last:border-0">
                         <span className="text-zinc-500">{r.k}</span>
@@ -148,7 +148,7 @@ export default function DigitalPassport() {
               <div className="px-6 pb-6">
                 <div className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-3">Certifications Attached</div>
                 <div className="flex flex-wrap gap-2">
-                  {['ISO 9001:2015', 'ISO 14001:2015', 'ISCC PLUS', 'EU ETS Permit', 'EIGA Doc 70', 'EN 13279', 'Bureau Veritas Analysis'].map(c => (
+                  {['ISO 9001:2015', 'ISO 14001:2015', 'ISCC PLUS', 'CPCB CTO', 'BIS IS:15222', 'Bureau Veritas Analysis'].map(c => (
                     <span key={c} className="text-xs px-2 py-1 bg-zinc-100 text-zinc-700 rounded border border-zinc-200 font-mono">{c}</span>
                   ))}
                 </div>
@@ -174,7 +174,7 @@ export default function DigitalPassport() {
                   { l: 'Chain of custody confirmed', done: true },
                   { l: 'Passport issued', done: true },
                   { l: 'Utilization recorded', done: false },
-                  { l: 'MRV verification (SGS)', done: false },
+                  { l: 'MRV verification (BV)', done: false },
                 ].map((s, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] border ${s.done ? 'bg-[#15572A] border-[#15572A] text-white' : 'bg-white border-zinc-300'}`}>
