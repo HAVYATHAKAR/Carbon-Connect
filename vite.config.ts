@@ -4,9 +4,16 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import siteConfiguration from './.figma/make/site.json' with { type: 'json' }
+import fs from 'node:fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+let siteConfiguration = {}
+try {
+  siteConfiguration = JSON.parse(fs.readFileSync(path.resolve(__dirname, './.figma/make/site.json'), 'utf-8'))
+} catch (e) {
+  console.warn('Could not load .figma/make/site.json, using defaults')
+}
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
